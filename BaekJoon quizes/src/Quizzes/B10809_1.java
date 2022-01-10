@@ -1,4 +1,4 @@
-package Baekjoon;
+package Quizzes;
 
 public class B10809_1 {
 

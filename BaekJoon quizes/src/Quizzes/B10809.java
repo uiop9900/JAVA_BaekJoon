@@ -1,4 +1,4 @@
-package Baekjoon;
+package Quizzes;
 
 import java.util.Scanner;
 
