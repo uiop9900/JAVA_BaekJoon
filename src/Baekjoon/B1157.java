@@ -1,7 +1,5 @@
 package Baekjoon;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class B1157 {
@@ -11,14 +9,24 @@ public class B1157 {
 		String word = scan.next(); 
 		String upperWord = word.toUpperCase(); //출력이 대문자라 일단 대문자로 다 만든 다음에 비교.
 		
-		List<Character> arr = new ArrayList<>(); 
-		for (int i = 0; i < word.length(); i++) { // i는 0 ~ 글자수
-			for (int j = i + 1; j < word.length(); j++) { // j는 1 ~ 글자수
-				if (word.charAt(i) == word.charAt(j)) {// 같으면? abca
-					arr.add(word.charAt(i));
-				}
+		int[] alpabet = new int[26]; // a-z까지 저장한다음 같은값이 있으면 그 칸이 +1 하기
+		
+		//값을 입력받아서 - 65를 하면 0 = A
+		for (int i = 0 ; i < upperWord.length(); i++) {
+			int wordNumber = (int)upperWord.charAt(i) - 65; // 0=A
+			alpabet[wordNumber]++;
+		}
+		
+		int maxIdx = 0;
+		int max = 0;
+		
+		for(int i = 0; i < 26; i++) {
+			System.out.println(alpabet[i]); //여기까지 완벽함;
+			if(max < alpabet[i]) {
+				maxIdx = i;
 			}
 		}
-		System.out.println(arr);
+		System.out.println((char)(maxIdx + 65));
 	}
+	
 }
