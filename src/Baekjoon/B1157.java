@@ -19,12 +19,13 @@ public class B1157 {
 		
 		int maxIdx = 0;
 		int max = 0;
-		
+		// 여러개일때는 ?를 출력,,
 		for(int i = 0; i < 26; i++) {
-			System.out.println(alpabet[i]); //여기까지 완벽함;
 			if(max < alpabet[i]) {
+				max = alpabet[i];
 				maxIdx = i;
 			}
+			
 		}
 		System.out.println((char)(maxIdx + 65));
 	}
